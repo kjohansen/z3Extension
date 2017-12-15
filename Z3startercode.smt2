@@ -61,7 +61,7 @@
 (declare-const line-47-cond bool) ; if (trian == 3 && b + c > a)
 
 ; Assign the values of the conditionals
-(assert (=  line-20-cond (or  (bvslt a bv0) 
+(assert (=  line-20-cond (or  (bvslt a bv0)
                               (bvslt b bv0)
                               (bvslt c bv0))))
 (assert (= line-24-cond a-eq-b))
@@ -116,9 +116,16 @@
 
 ;;;;;;;;;;;;;;;;; START STUDENT CODE ;;;;;;;;;;;;;;;
 
-(assert (= mutated-condition )
+(assert (not line-20-cond))
+(assert line-33-cond)
 
+(assert (= mutated-condition (or (or (and (not (bvsle a-plus-c b))
+                                          (bvsle a-plus-b c))
+                                     (and (bvsle a-plus-c b)
+                                          (not(bvsle a-plus-b c))))
+                                 (bvsle b-plus-c a))))
 
+(assert (= initial-condition line-34-cond))
 
 ;;;;;;;;;;;;;;;;; END STUDENT CODE ;;;;;;;;;;;;;;;
 (assert (not(= mutated-condition initial-condition)))
