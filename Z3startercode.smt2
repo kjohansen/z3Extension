@@ -43,8 +43,8 @@
 (declare-const trian  Int)
 
 ; Conditionals in if statements given by their line numbers in the initial
-; source code. Thus line-20-cond corresponds to 
-; 
+; source code. Thus line-20-cond corresponds to
+;
 ;       if (a <= 0 || b <= 0 || c <= 0) { ...
 ;
 ; This is provided for convenience
@@ -61,7 +61,7 @@
 (declare-const line-47-cond bool) ; if (trian == 3 && b + c > a)
 
 ; Assign the values of the conditionals
-(assert (=  line-20-cond (or  (bvslt a bv0) 
+(assert (=  line-20-cond (or  (bvslt a bv0)
                               (bvslt b bv0)
                               (bvslt c bv0))))
 (assert (= line-24-cond a-eq-b))
@@ -127,6 +127,3 @@
 (echo "-------------------------------- Getting model ---------------------------------")
 (get-model)
 (pop)
-
-
-
