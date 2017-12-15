@@ -116,9 +116,16 @@
 
 ;;;;;;;;;;;;;;;;; START STUDENT CODE ;;;;;;;;;;;;;;;
 
-(assert (= mutated-condition )
+(assert (not line-20-cond))
+(assert line-33-cond)
 
+(assert (= mutated-condition (or (or (and (not (bvsle a-plus-c b))
+                                          (bvsle a-plus-b c))
+                                     (and (bvsle a-plus-c b)
+                                          (not(bvsle a-plus-b c))))
+                                 (bvsle b-plus-c a))))
 
+(assert (= initial-condition line-34-cond))
 
 ;;;;;;;;;;;;;;;;; END STUDENT CODE ;;;;;;;;;;;;;;;
 (assert (not(= mutated-condition initial-condition)))
